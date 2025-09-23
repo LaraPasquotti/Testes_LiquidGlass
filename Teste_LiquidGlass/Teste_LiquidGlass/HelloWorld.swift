@@ -10,6 +10,7 @@ import SwiftUI
 struct HelloWorld: View {
     var body: some View {
         NavigationStack {
+            
             ZStack {
                 LinearGradient(
                         colors: [.blue, .white],
@@ -25,8 +26,10 @@ struct HelloWorld: View {
                         .padding()
                         .glassEffect(.regular.tint(.blue).interactive())
                 }
+                
+                
             }
-        }
+        }.background(Color("Background"))
         
     }
 }
