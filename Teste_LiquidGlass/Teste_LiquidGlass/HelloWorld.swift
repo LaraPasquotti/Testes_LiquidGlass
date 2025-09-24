@@ -8,29 +8,46 @@
 import SwiftUI
 
 struct HelloWorld: View {
+    // Controle global do tema
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
+
     var body: some View {
         NavigationStack {
-            
             ZStack {
-                LinearGradient(
-                        colors: [.blue, .white],
-                        startPoint: .bottomTrailing,
-                        endPoint: .topLeading
-                    )
+                // Fundo que reage ao tema e às cores do Assets
+                Color("Background")
                     .ignoresSafeArea()
-                
-                NavigationLink(destination: result()) {
-                    Text("Click here!")
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .padding()
-                        .glassEffect(.regular.tint(.blue).interactive())
+
+                VStack(spacing: 24) {
+                    NavigationLink(destination: Tela1()) {
+                        Text("Click here!")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding()
+                            .glassEffect(.regular.tint(.blue).interactive())
+                    }
+
+                    NavigationLink(destination: Tela2()) {
+                        Text("Dark Mode")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding()
+                            .glassEffect(.regular.tint(.blue).interactive())
+                    }
+
+                    NavigationLink(destination: Tela3()) {
+                        Text("Click here!")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding()
+                            .glassEffect(.regular.tint(.blue).interactive())
+                    }
                 }
-                
-                
+                .padding()
             }
-        }.background(Color("Background"))
-        
+        }
+        // Aplica o tema no app inteiro (nesta hierarquia)
+        .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 }
 
