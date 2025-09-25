@@ -15,23 +15,24 @@ struct HelloWorld: View {
         NavigationStack {
             ZStack {
                 // Fundo que reage ao tema e às cores do Assets
-                Color("Background")
-                    .ignoresSafeArea()
+                Color("Background").ignoresSafeArea()
 
-                VStack(spacing: 24) {
+                VStack(spacing: 34) {
                     NavigationLink(destination: Tela1()) {
-                        Text("Click here!")
+                        Text("Lista")
                             .font(.title)
                             .foregroundColor(.white)
                             .padding()
+                            .frame(maxWidth: 200, minHeight: 56)
                             .glassEffect(.regular.tint(.blue).interactive())
                     }
 
                     NavigationLink(destination: Tela2()) {
-                        Text("Dark Mode")
+                        Text("Tema")
                             .font(.title)
                             .foregroundColor(.white)
                             .padding()
+                            .frame(maxWidth: 200, minHeight: 56)
                             .glassEffect(.regular.tint(.blue).interactive())
                     }
 
@@ -40,6 +41,7 @@ struct HelloWorld: View {
                             .font(.title)
                             .foregroundColor(.white)
                             .padding()
+                            .frame(maxWidth: 200, minHeight: 56)
                             .glassEffect(.regular.tint(.blue).interactive())
                     }
                 }

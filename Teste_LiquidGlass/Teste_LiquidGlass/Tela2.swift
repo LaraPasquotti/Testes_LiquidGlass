@@ -12,8 +12,7 @@ struct Tela2: View {
 
     var body: some View {
         ZStack {
-            Color("Background")
-                .ignoresSafeArea()
+            Color("Background").ignoresSafeArea()
 
             VStack {
                 Toggle("", isOn: $isDarkMode)
