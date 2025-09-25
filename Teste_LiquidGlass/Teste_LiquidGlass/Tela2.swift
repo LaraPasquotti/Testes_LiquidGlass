@@ -25,11 +25,15 @@ struct Tela2: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         }
-        // Variante local: aplica o tema só nesta tela
+        .navigationTitle("Tema")
+        .navigationBarTitleDisplayMode(.inline)
         .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 }
 
 #Preview {
-    Tela2()
+    // Envolva no NavigationStack para visualizar o título no Preview
+    NavigationStack {
+        Tela2()
+    }
 }
