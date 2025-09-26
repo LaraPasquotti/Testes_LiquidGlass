@@ -37,7 +37,7 @@ struct HelloWorld: View {
                     }
 
                     NavigationLink(destination: Tela3()) {
-                        Text("Click here!")
+                        Text("Sobre mim")
                             .font(.title)
                             .foregroundColor(.white)
                             .padding()
@@ -47,8 +47,8 @@ struct HelloWorld: View {
                 }
                 .padding()
             }
+            .navigationTitle("Guia")
         }
-        // Aplica o tema no app inteiro (nesta hierarquia)
         .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 }

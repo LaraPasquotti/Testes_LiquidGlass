@@ -13,17 +13,16 @@ struct Tela2: View {
     var body: some View {
         ZStack {
             Color("Background").ignoresSafeArea()
-
-            VStack {
-                Toggle("", isOn: $isDarkMode)
-                    .labelsHidden()
-                    .toggleStyle(.switch)
-                    .tint(.blue)
-                    .scaleEffect(1.5)
-                    .padding(.horizontal, 24)
-                    .accessibilityLabel("Dark Mode")
+            
+            Form {
+                Section {
+                    LabeledContent("Tema escuro") {
+                        Toggle("", isOn: $isDarkMode)
+                            .labelsHidden()
+                    }
+                }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            .scrollContentBackground(.hidden)
         }
         .navigationTitle("Tema")
         .navigationBarTitleDisplayMode(.inline)
