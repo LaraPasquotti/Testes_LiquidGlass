@@ -48,7 +48,9 @@ struct HelloWorld: View {
                 .padding()
             }
             .navigationTitle("Guia")
+
         }
+        // Aplica o tema no app inteiro (nesta hierarquia)
         .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 }
